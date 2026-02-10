@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('user_pdfs', function (Blueprint $table) {
+            $table->id();
+            $table->string('product_id', 200)->nullable();
+            $table->string('name' , 100)->nullable();
+            $table->longText('email', 40)->nullable();
+            $table->string('phone', 40)->nullable();
+            $table->string('link', 200)->nullable();
+            $table->string('slug')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('user_pdfs');
+    }
+};

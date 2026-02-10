@@ -1,0 +1,1 @@
+<a {{ $attributes->merge(['class' => 'btn btn-warning btn-sm ms-2']) }}><i class="fa fa-arrow-left"></i> {{ __('Back') }}</a>
